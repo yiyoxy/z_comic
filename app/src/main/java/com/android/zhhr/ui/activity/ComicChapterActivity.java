@@ -162,7 +162,7 @@ public class ComicChapterActivity extends BaseActivity<ComicChapterPresenter> im
 
     @Override
     public void preChapter() {
-
+        ShowToast("test");
     }
 
     @Override
