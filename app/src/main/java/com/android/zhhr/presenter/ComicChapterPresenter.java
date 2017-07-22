@@ -2,7 +2,9 @@ package com.android.zhhr.presenter;
 
 import android.app.Activity;
 
+import com.android.zhhr.data.commons.Constants;
 import com.android.zhhr.data.entity.Subject;
+import com.android.zhhr.ui.adapter.ChapterViewpagerAdapter;
 import com.android.zhhr.ui.view.IChapterView;
 
 import rx.Subscriber;
@@ -40,5 +42,25 @@ public class ComicChapterPresenter extends BasePresenter<IChapterView>{
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
+    }
+
+    public void clickScreen(float x,float y){
+        if (x<0.336){
+            mView.prePage();
+        }else if(x<0.666){
+            mView.showMenu();
+        }else {
+            mView.nextPage();
+        }
+    }
+
+    public void setTitle(String comic_chapter_title, int comic_size, int position,int Direct){
+        String title = null;
+        if(Direct == Constants.LEFT_TO_RIGHT){
+            title = comic_chapter_title+"-"+(position+1)+"/"+comic_size;
+        }else{
+            title = comic_chapter_title+"-"+(comic_size-position)+"/"+comic_size;
+        }
+        mView.setTitle(title);
     }
 }

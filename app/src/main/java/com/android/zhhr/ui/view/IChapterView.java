@@ -13,14 +13,18 @@ public interface IChapterView<T> extends IBaseView{
     void showErrorView(Throwable throwable);
     //填充数据
     void fillData(T data);
-    //进入全屏
-    void enterFullScreen();
-    //退出全屏
-    void exitFullScreen();
+    //弹出菜单
+    void showMenu();
     //下一章
     void nextChapter();
     //前一章
     void preChapter();
     //切换预览模式
     void SwitchModel(int a);
+    //前一页
+    void prePage();
+    //下一页
+    void nextPage();
+
+    void setTitle(String name);
 }

@@ -284,7 +284,7 @@ public class ComicDetaiActivity extends BaseActivity<ComicDetailPresenter> imple
             position = mComic.getChapters().size()-position-1;
             Log.d("ComicDetailActivity","position="+position);
         }
-        IntentUtil.ToComicChapter(this,comic_id,position+"");
+        IntentUtil.ToComicChapter(this,comic_id,position+"",mComic.getChapters().get(position));
     }
 
     @Override
@@ -314,7 +314,7 @@ public class ComicDetaiActivity extends BaseActivity<ComicDetailPresenter> imple
 
     @OnClick(R.id.btn_read)
     public void StartRead(View view){
-        IntentUtil.ToComicChapter(this,comic_id,0+"");
+        IntentUtil.ToComicChapter(this,comic_id,0+"",mComic.getChapters().get(0));
     }
 
 }
