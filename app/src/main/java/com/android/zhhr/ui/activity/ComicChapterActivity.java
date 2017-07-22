@@ -157,7 +157,7 @@ public class ComicChapterActivity extends BaseActivity<ComicChapterPresenter> im
 
     @Override
     public void nextChapter() {
-
+        showToast("下一章");
     }
 
     @Override
